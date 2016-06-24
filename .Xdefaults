@@ -9,7 +9,7 @@
 ! Fonts
 URxvt.font: xft:DejaVu Sans Mono:pixelsize=18
 URxvt.boldFont: xft:DejaVu Sans Mono:style=bold:pixelsize=18
-URxvt.letterSpace: -1
+! URxvt.letterSpace: -1
 
 ! Scrollbar
 URxvt.scrollBar: false
