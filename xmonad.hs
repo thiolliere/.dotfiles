@@ -65,7 +65,7 @@ customPP = defaultPP { ppCurrent = xmobarColor "#C9A34E" "" . wrap "<" ">"
 
 -- borders
 borderWidth' = 2
-normalBorderColor'  = "#cccccc"
+normalBorderColor'  = "#073642"
 focusedBorderColor' = "#cb9b00"
 
 -- workspaces
@@ -84,7 +84,7 @@ layoutHook' = tile ||| mtile ||| full
 
 -------------------------------------------------------------------------------
 -- Terminal --
-terminal' = "urxvtcd"
+terminal' = "urxvtc"
 
 -------------------------------------------------------------------------------
 -- Keys/Button bindings --
@@ -150,6 +150,8 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask .|. shiftMask, xK_l     ), sendMessage MirrorExpand)
 
     -- quit, or restart
+	, ((modMask,               xK_Escape), spawn "systemctl suspend")
+	, ((modMask .|. shiftMask, xK_Escape), spawn "systemctl hybrid-sleep")
     , ((modMask .|. shiftMask, xK_q     ), inputPrompt myXPConfig "éteindre ?(o/n)" ?+ safeShutdown)
     , ((modMask              , xK_q     ), spawn "xmonad --recompile; xmonad --restart")
     ]
