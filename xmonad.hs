@@ -32,7 +32,7 @@ import XMonad.Layout.Named
 -- Main --
 main :: IO ()
 main = xmonad =<< statusBar cmd pp kb conf
-  where 
+  where
     cmd = "bash -c \"tee >(xmobar -x0) | xmobar -x1\""
     pp = customPP
     kb = toggleStrutsKey
@@ -57,7 +57,7 @@ conf' = defaultConfig
 customPP = defaultPP { ppCurrent = xmobarColor "#C9A34E" "" . wrap "<" ">"
                      , ppHidden = xmobarColor "#93a1a1" ""
                      , ppHiddenNoWindows = xmobarColor "#657b83" ""
-                     , ppUrgent = xmobarColor "#dc322f" "" . wrap "[" "]" 
+                     , ppUrgent = xmobarColor "#dc322f" "" . wrap "[" "]"
                      , ppLayout = xmobarColor "#C9A34E" ""
                      , ppTitle =  xmobarColor "#C9A34E" "" . shorten 80
                      , ppSep = xmobarColor "#429942" "" " | "
@@ -72,7 +72,7 @@ focusedBorderColor' = "#cb9b00"
 workspaces' = ["1-main", "2-web", "3-mail", "4-dev-doc", "5-dev-code", "6-dev-test", "7", "8", "9"]
 
 -- Layouts --
-layoutHook' = tile ||| mtile ||| full 
+layoutHook' = tile ||| mtile ||| full
   where
     rt      = ResizableTall 1 (2/100) (1/2) []
     -- normal vertical tile
@@ -84,7 +84,7 @@ layoutHook' = tile ||| mtile ||| full
 
 -------------------------------------------------------------------------------
 -- Terminal --
-terminal' = "gnome-terminal"
+terminal' = "urxvtc"
 
 -------------------------------------------------------------------------------
 -- Keys/Button bindings --
@@ -95,7 +95,7 @@ myXPConfig = defaultXPConfig { height = 20 }
 
 safeShutdown :: String -> X ()
 safeShutdown s =
-	if s == "o" 
+	if s == "o"
 	then spawn "gnome-terminal -e \"sudo poweroff -hp\""
 	else spawn ""
 
@@ -106,7 +106,7 @@ toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 keys' :: XConfig Layout -> M.Map (KeyMask, KeySym) (X ())
 keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- launching and killing programs
-    [ ((modMask,               xK_Return), safeSpawn (XMonad.terminal conf) []) 
+    [ ((modMask,               xK_Return), safeSpawn (XMonad.terminal conf) [])
     , ((modMask .|. shiftMask, xK_c     ), kill)
     , ((modMask,	       xK_c     ), safeSpawn "firefox" ["https://portail-captif.grenet.fr/fs/customwebauth/login.html?switch_url=https://portail-captif.grenet.fr/login.html&redirect=wwww.duckduckgo.com"])
     , ((modMask,	       xK_o     ), spawn "firefox")
