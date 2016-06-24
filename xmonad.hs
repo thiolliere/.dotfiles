@@ -74,7 +74,7 @@ workspaces' = ["1-main", "2-web", "3-mail", "4-dev-doc", "5-dev-code", "6-dev-te
 -- Layouts --
 layoutHook' = tile ||| mtile ||| full
   where
-    rt      = ResizableTall 1 (2/100) (1/2) []
+    rt      = ResizableTall 0 (2/100) (1/2) []
     -- normal vertical tile
     tile    = named "[]="   $ smartBorders rt
     -- normal horizontal tile
@@ -84,7 +84,7 @@ layoutHook' = tile ||| mtile ||| full
 
 -------------------------------------------------------------------------------
 -- Terminal --
-terminal' = "urxvtdc"
+terminal' = "urxvtcd"
 
 -------------------------------------------------------------------------------
 -- Keys/Button bindings --
@@ -93,25 +93,26 @@ modMask' = mod4Mask
 
 myXPConfig = defaultXPConfig { height = 20 }
 
-safeShutdown :: String -> X ()
-safeShutdown s =
-	if s == "o"
-	then spawn "gnome-terminal -e \"sudo poweroff -hp\""
-	else spawn ""
-
 -- keys
 toggleStrutsKey :: XConfig Layout -> (KeyMask, KeySym)
 toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
+
+safeShutdown msg =
+	if msg == "o"
+	then io (exitWith ExitSuccess)
+	else spawn ""
 
 keys' :: XConfig Layout -> M.Map (KeyMask, KeySym) (X ())
 keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- launching and killing programs
     [ ((modMask,               xK_Return), safeSpawn (XMonad.terminal conf) [])
     , ((modMask .|. shiftMask, xK_c     ), kill)
-    , ((modMask,	       xK_c     ), safeSpawn "firefox" ["https://portail-captif.grenet.fr/fs/customwebauth/login.html?switch_url=https://portail-captif.grenet.fr/login.html&redirect=wwww.duckduckgo.com"])
-    , ((modMask,	       xK_o     ), spawn "firefox")
-    , ((modMask,	       xK_p     ), safeSpawn "firefox" ["--private-window"])
+    , ((modMask,	       xK_c     ), safeSpawn "iceweasel" ["https://portail-captif.grenet.fr/fs/customwebauth/login.html?switch_url=https://portail-captif.grenet.fr/login.html&redirect=wwww.duckduckgo.com"])
+    , ((modMask,	       xK_o     ), spawn "iceweasel")
+    , ((modMask,	       xK_p     ), safeSpawn "iceweasel" ["--private-window"])
     , ((modMask,	       xK_i     ), spawn "icedove")
+	, ((modMask,		   xK_r	    ), spawn "redshift")
+	, ((modMask .|. shiftMask, xK_r ), spawn "pkill -x redshift")
 
     -- multimedia
     , ((0, xF86XK_AudioRaiseVolume      ), safeSpawn "amixer" ["-q", "set", "Master", "1+"])
