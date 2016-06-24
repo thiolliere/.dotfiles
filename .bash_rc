@@ -92,6 +92,7 @@ fi
 #alias la='ls -A'
 #alias l='ls -CF'
 alias info='info --vi-keys'
+alias ls='ls --color'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
