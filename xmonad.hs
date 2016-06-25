@@ -113,7 +113,7 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask,	       xK_o     ), spawn "iceweasel")
     , ((modMask,	       xK_p     ), safeSpawn "iceweasel" ["--private-window"])
     , ((modMask,	       xK_i     ), spawn "icedove")
-	, ((modMask,		   xK_r	    ), spawn "redshift")
+	, ((modMask,		   xK_r	    ), spawn "redshift -l 45:5")
 	, ((modMask .|. shiftMask, xK_r ), spawn "pkill -x redshift")
 
     -- multimedia
