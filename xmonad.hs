@@ -14,6 +14,7 @@ import XMonad.Prompt.Input
 import XMonad.Actions.GridSelect
 
 -- hooks
+import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageHelpers
@@ -49,6 +50,7 @@ conf' = defaultConfig
 	, terminal = terminal'
 	, keys = keys'
 	, layoutHook = layoutHook'
+	, handleEventHook = fullscreenEventHook
 	}
 
 -------------------------------------------------------------------------------
