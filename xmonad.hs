@@ -71,7 +71,7 @@ normalBorderColor'  = "#073642"
 focusedBorderColor' = "#cb9b00"
 
 -- workspaces
-workspaces' = ["1-main", "2-web", "3-mail", "4-dev-doc", "5-dev-code", "6-dev-test", "7", "8", "9"]
+workspaces' = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 -- Layouts --
 layoutHook' = tile ||| mtile ||| full
