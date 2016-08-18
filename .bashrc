@@ -93,6 +93,9 @@ fi
 #alias l='ls -CF'
 alias info='info --vi-keys'
 alias ls='ls --color'
+alias mv='mv -i'
+alias cp='cp -i'
+alias archive='tar -czvf /tmp/archive_$(date +%d_%m_%Y).tar.gz /home/thiolliere'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
