@@ -95,7 +95,11 @@ alias info='info --vi-keys'
 alias ls='ls --color'
 alias mv='mv -i'
 alias cp='cp -i'
-alias archive='tar -czvf /tmp/archive_$(date +%d_%m_%Y).tar.gz /home/thiolliere'
+alias archive='tar -czvf /tmp/archive_$(date +%d_%m_%Y).tar.gz /home/thiolliere/'
+scp_jupiter_alias_function() {
+	scp $* root@thiolliere.org:/var/www/html/private/
+}
+alias scp_jupiter=scp_jupiter_alias_function
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -119,3 +123,6 @@ fi
 
 # source rustup environment
 source $HOME/.cargo/env
+
+VISUAL=vim; export VISUAL
+EDITOR=vim; export EDITOR
