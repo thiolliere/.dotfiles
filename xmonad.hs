@@ -41,7 +41,7 @@ main = xmonad =<< statusBar cmd pp kb conf
 
 -------------------------------------------------------------------------------
 -- Configs --
-conf' = defaultConfig
+conf' = ewmh defaultConfig
 	{ workspaces = workspaces'
 	, modMask = modMask'
 	, borderWidth = borderWidth'
