@@ -82,7 +82,7 @@ layoutHook' = tile ||| mtile ||| full
     -- normal horizontal tile
     mtile   = named "M[]="  $ smartBorders $ Mirror rt
     -- fullscreen without tabs
-    full        = named "[ ]"    $ noBorders Full
+    full        = named "[ ]" $ smartBorders $ noBorders Full
 
 -------------------------------------------------------------------------------
 -- Terminal --
@@ -116,11 +116,15 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 	, ((modMask,		   xK_f	    ), spawn "urxvtc -e vim /home/thiolliere/.config/redshift.conf")
 	, ((modMask,		   xK_r	    ), spawn "pkill redshift; redshift -l 45:5")
 	, ((modMask .|. shiftMask, xK_r ), spawn "pkill redshift")
+	, ((modMask,           xK_s     ), spawn "slock")
 
     -- multimedia
-    , ((0, xF86XK_AudioRaiseVolume      ), safeSpawn "amixer" ["-q", "set", "Master", "1+"])
-    , ((0, xF86XK_AudioLowerVolume      ), safeSpawn "amixer" ["-q", "set", "Master", "1-"])
+    , ((0, xF86XK_AudioRaiseVolume      ), safeSpawn "amixer" ["-q", "set", "Master", "10%+"])
+    , ((0, xF86XK_AudioLowerVolume      ), safeSpawn "amixer" ["-q", "set", "Master", "10%-"])
     , ((0, xF86XK_AudioMute             ), safeSpawn "amixer" ["-q", "set", "Master", "toggle"])
+    , ((0, xF86XK_iTouch                ), safeSpawn "amixer" ["-q", "set", "Master", "toggle"])
+    -- , ((0, xF86XK_MonBrightnessUp       ), safeSpawn "amixer" ["-q", "set", "Master", "toggle"])
+    -- , ((0, xF86XK_MonBrightnessDown     ), safeSpawn "amixer" ["-q", "set", "Master", "toggle"])
 
     -- floating layer stuff
     , ((modMask,               xK_t     ), withFocused $ windows . W.sink)
