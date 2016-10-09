@@ -110,6 +110,8 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     [ ((modMask,               xK_Return), safeSpawn (XMonad.terminal conf) [])
     , ((modMask .|. shiftMask, xK_c     ), kill)
     , ((modMask,	       xK_c     ), safeSpawn "iceweasel" ["https://portail-captif.grenet.fr/fs/customwebauth/login.html?switch_url=https://portail-captif.grenet.fr/login.html&redirect=wwww.duckduckgo.com"])
+	, ((modMask,		   xK_z     ), spawn "xdotool getactivewindow key Down")
+	, ((modMask,		   xK_e     ), spawn "xdotool getactivewindow key Up")
     , ((modMask,	       xK_o     ), spawn "iceweasel")
     , ((modMask,	       xK_p     ), safeSpawn "iceweasel" ["--private-window"])
     , ((modMask,	       xK_i     ), spawn "icedove")
@@ -157,8 +159,8 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask .|. shiftMask, xK_l     ), sendMessage MirrorExpand)
 
     -- quit, or restart
-	, ((modMask,               xK_Escape), spawn "systemctl suspend")
-	, ((modMask .|. shiftMask, xK_Escape), spawn "systemctl hybrid-sleep")
+    , ((modMask,               xK_Escape), spawn "systemctl suspend")
+    , ((modMask .|. shiftMask, xK_Escape), spawn "systemctl hybrid-sleep")
     , ((modMask .|. shiftMask, xK_q     ), inputPrompt myXPConfig "éteindre ?(o/n)" ?+ safeShutdown)
     , ((modMask              , xK_q     ), spawn "xmonad --recompile; xmonad --restart")
     ]
@@ -168,12 +170,12 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     [((m .|. modMask, k), windows $ f i)
         | (i, k) <- zip (XMonad.workspaces conf) [xK_ampersand, xK_eacute, xK_quotedbl, xK_apostrophe, xK_parenleft, xK_minus, xK_egrave, xK_underscore, xK_ccedilla]
         , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
-    ++
+    -- ++
     -- mod-[w,e] %! switch to twinview screen 1/2
     -- mod-shift-[w,e] %! move window to screen 1/2
-    [((m .|. modMask, key), screenWorkspace sc >>= flip whenJust (windows . f))
-        | (key, sc) <- zip [xK_a, xK_e] [0..]
-        , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
+    -- [((m .|. modMask, key), screenWorkspace sc >>= flip whenJust (windows . f))
+    --     | (key, sc) <- zip [xK_a, xK_e] [0..]
+    --     , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
 
 -------------------------------------------------------------------------------
 
