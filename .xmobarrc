@@ -70,5 +70,5 @@ Config { font = "xft:dejavu-16"
 		]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %StdinReader% }{ %dynnetwork% <fc=#429942>|</fc> %multicpu% <fc=#429942>|</fc> %coretemp% <fc=#429942>|</fc> %memory% <fc=#429942>|</fc> %battery% <fc=#429942>|</fc> %date%"
+       , template = "             <fc=#429942>|</fc> %StdinReader% }{ %dynnetwork% <fc=#429942>|</fc> %multicpu% <fc=#429942>|</fc> %coretemp% <fc=#429942>|</fc> %memory% <fc=#429942>|</fc> %battery% <fc=#429942>|</fc> %date%"
        }
