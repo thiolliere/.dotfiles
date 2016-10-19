@@ -1,4 +1,4 @@
-Config { font = "xft:dejavu-16"
+Config { font = "xft:dejavu-14"
        , bgColor = "#000000"
        , fgColor = "#93a1a1"
        , border = NoBorder
