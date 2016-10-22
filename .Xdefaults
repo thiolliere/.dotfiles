@@ -11,6 +11,15 @@ URxvt.font: xft:DejaVu Sans Mono:pixelsize=18
 URxvt.boldFont: xft:DejaVu Sans Mono:style=bold:pixelsize=18
 ! URxvt.letterSpace: -1
 
+URxvt.perl-ext-common: font-size
+
+URxvt.keysym.C-M-Up:     font-size:increase
+URxvt.keysym.C-M-Down:   font-size:decrease
+URxvt.keysym.C-M-Right:  font-size:incglobal
+URxvt.keysym.C-M-Left:   font-size:decglobal
+URxvt.keysym.C-M-equal:  font-size:reset
+URxvt.keysym.C-M-comma:  font-size:show
+
 ! Scrollbar
 URxvt.scrollBar: false
 
@@ -55,3 +64,4 @@ URxvt.scrollBar: false
 !! white dark/light
 *color7: #eee8d5
 *color15: #fdf6e3
+
