@@ -96,10 +96,13 @@ alias ls='ls --color'
 alias mv='mv -i'
 alias cp='cp -i'
 alias archive='tar -czvf /tmp/archive_$(date +%d_%m_%Y).tar.gz /home/thiolliere/'
-scp_jupiter_alias_function() {
+scp_jupiter() {
 	scp $* root@thiolliere.org:/var/www/html/private/
 }
-alias scp_jupiter=scp_jupiter_alias_function
+alias source_emcc='source ~/emsdk_portable/emsdk_env.sh'
+rustup_default() {
+	rustup default $*-x86_64-unknown-linux-gnu
+}
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -126,3 +129,6 @@ source $HOME/.cargo/env
 
 VISUAL=vim; export VISUAL
 EDITOR=vim; export EDITOR
+
+# go
+export GOPATH='/home/thiolliere/developpement/makefile'

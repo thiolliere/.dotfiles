@@ -115,7 +115,7 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask,	       xK_o     ), spawn "iceweasel")
     , ((modMask,	       xK_p     ), safeSpawn "iceweasel" ["--private-window"])
     , ((modMask,	       xK_i     ), spawn "icedove")
-	, ((modMask,		   xK_f	    ), spawn "urxvtc -e vim /home/thiolliere/.config/redshift.conf")
+	, ((modMask,		   xK_f	    ), spawn "urxvt -e vim /home/thiolliere/.config/redshift.conf; pkill redshift; redshift -l 45:5")
 	, ((modMask,		   xK_r	    ), spawn "pkill redshift; redshift -l 45:5")
 	, ((modMask .|. shiftMask, xK_r ), spawn "pkill redshift")
 	, ((modMask,           xK_s     ), spawn "slock")
