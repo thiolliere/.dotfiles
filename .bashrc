@@ -76,12 +76,12 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
 
-    #alias grep='grep --color=auto'
-    #alias fgrep='fgrep --color=auto'
-    #alias egrep='egrep --color=auto'
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
 fi
 
 # colored GCC warnings and errors
@@ -103,6 +103,13 @@ alias source_emcc='source ~/emsdk_portable/emsdk_env.sh'
 rustup_default() {
 	rustup default $*-x86_64-unknown-linux-gnu
 }
+background_mute() {
+	$* > /dev/null 2>&1 &
+}
+alias bgm=background_mute
+alias emsdk_install_incoming='~/emsdk_portable/emsdk install sdk-incoming-64bit'
+alias emsdk_activate_incoming='~/emsdk_portable/emsdk activate sdk-incoming-64bit'
+alias date='date +%A\ %d\ %B,\ %H:%M:%S'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like

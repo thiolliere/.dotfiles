@@ -66,9 +66,9 @@ Config { font = "xft:dejavu-14"
 
 		-- time and date indicator
 		--   (%F = y-m-d date, %a = day of week, %T = h:m:s time)
-		--, Run Date           "<fc=#ABABAB>%F (%a) %T</fc>" "date" 10
+		--, Run Date           "%A %d %B, %H:%M:%S" "date" 10
 		]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "             <fc=#429942>|</fc> %StdinReader% }{ %dynnetwork% <fc=#429942>|</fc> %multicpu% <fc=#429942>|</fc> %coretemp% <fc=#429942>|</fc> %memory% <fc=#429942>|</fc> %battery% <fc=#429942>|</fc> %date%"
+       , template = "             <fc=#429942>|</fc> %StdinReader% }{ <fc=#429942>|</fc> %dynnetwork% <fc=#429942>|</fc> %multicpu% <fc=#429942>|</fc> %coretemp% <fc=#429942>|</fc> %memory% <fc=#429942>|</fc> %battery% <fc=#429942>|</fc> %date%"
        }
