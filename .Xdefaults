@@ -20,7 +20,10 @@ URxvt.keysym.C-M-Left:   font-size:decglobal
 URxvt.keysym.C-M-equal:  font-size:reset
 URxvt.keysym.C-M-comma:  font-size:show
 
-! Scrollbar
+! Scroll
+URxvt*scrollTtyOutput:      false
+URxvt*scrollWithBuffer:     true
+URxvt*scrollTtyKeypress:    true
 URxvt.scrollBar: false
 
 !!Source http://github.com/altercation/solarized
@@ -64,4 +67,3 @@ URxvt.scrollBar: false
 !! white dark/light
 *color7: #eee8d5
 *color15: #fdf6e3
-

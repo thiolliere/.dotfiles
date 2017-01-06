@@ -119,7 +119,7 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
 	, ((modMask,		   xK_f	    ), spawn "urxvt -e vim /home/thiolliere/.config/redshift.conf; pkill -x redshift; redshift -l 45:5")
 	, ((modMask,		   xK_r	    ), spawn "pkill -x redshift; redshift -l 45:5")
-	, ((modMask .|. shiftMask, xK_r ), spawn "pkill -x redshift -l 45:5")
+	, ((modMask .|. shiftMask, xK_r ), spawn "pkill -x redshift")
     , ((0, xF86XK_MonBrightnessUp   ), spawn "redshift_cli --brightness up; pkill -x redshift; redshift -l 45:5")
     , ((0, xF86XK_MonBrightnessDown ), spawn "redshift_cli --brightness down; pkill -x redshift; redshift -l 45:5")
     , ((shiftMask, xF86XK_MonBrightnessUp   ), spawn "redshift_cli --temp up; pkill -x redshift; redshift -l 45:5")
