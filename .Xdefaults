@@ -25,6 +25,7 @@ URxvt*scrollTtyOutput:      false
 URxvt*scrollWithBuffer:     true
 URxvt*scrollTtyKeypress:    true
 URxvt.scrollBar: false
+URxvt.saveLines:        8192
 
 !!Source http://github.com/altercation/solarized
 

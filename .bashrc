@@ -96,8 +96,11 @@ alias ls='ls --color'
 alias mv='mv -i'
 alias cp='cp -i'
 alias archive='tar -czvf /tmp/archive_$(date +%d_%m_%Y).tar.gz /home/thiolliere/'
-scp_jupiter() {
-	scp $* root@thiolliere.org:/var/www/html/private/
+# scp_jupiter() {
+# 	scp $* root@thiolliere.org:/var/www/html/private/
+# }
+scp_jupiter_public() {
+	scp $* root@thiolliere.org:/var/www/html/public/
 }
 alias source_emcc='source ~/emsdk_portable/emsdk_env.sh'
 rustup_default() {
@@ -138,4 +141,13 @@ VISUAL=vim; export VISUAL
 EDITOR=vim; export EDITOR
 
 # go
-export GOPATH='/home/thiolliere/developpement/makefile'
+export GOPATH='~/developpement/makefile'
+
+# android
+export NDK_HOME='~/android-ndk-r14b'
+export ANDROID_HOME='~/android-sdk-linux'
+
+export PASSWORD_STORE_CLIP_TIME=10
+
+# added by travis gem
+[ -f /home/thiolliere/.travis/travis.sh ] && source /home/thiolliere/.travis/travis.sh

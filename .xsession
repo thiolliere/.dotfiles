@@ -6,4 +6,5 @@ urxvtd --quiet --opendisplay --fork
 xss-lock -- slock &
 stalonetray &
 nm-applet &
+lxpolkit &
 exec xmonad
