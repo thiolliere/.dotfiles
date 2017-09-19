@@ -114,6 +114,7 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 	, ((modMask,		   xK_e     ), spawn "xdotool key e Up")
     , ((modMask,	       xK_o     ), spawn "firefox")
     , ((modMask,	       xK_p     ), safeSpawn "firefox" ["--private-window"])
+    , ((modMask,	       xK_d     ), spawn "discord")
     , ((modMask,	       xK_i     ), spawn "thunderbird")
 	, ((modMask,           xK_s     ), spawn "slock")
 	, ((modMask,           xK_x     ), spawn "hexchat")
